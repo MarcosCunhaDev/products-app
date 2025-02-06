@@ -8,7 +8,7 @@ export interface ProductI {
 }
 
 const formatData = (response: any[]): ProductI[] => {
-  return response.map(item => {
+  return response?.map(item => {
     return {title: item.title, price: item.price, thumnbail: item.thumnbail};
   });
 };
