@@ -10,15 +10,10 @@ import {ProductsList} from '../../components/ProductsList';
 const Home = () => {
   const navigation = useNavigation();
   const {data} = useGetProducts();
-  return (
-    <View style={{backgroundColor: 'white', flex: 1}}>
-      <Text>Home</Text>
-      <ProductsList data={data} />
 
-      <Button
-        title="Go to Next Screen"
-        onPress={() => navigation.navigate('ProductDetails')}
-      />
+  return (
+    <View style={{backgroundColor: 'white', flex: 1, padding: 20}}>
+      <ProductsList data={data} />
     </View>
   );
 };

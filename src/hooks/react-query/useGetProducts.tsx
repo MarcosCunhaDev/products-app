@@ -4,12 +4,12 @@ import {fetchProducts} from '../../services/api';
 export interface ProductI {
   title: string;
   price: string;
-  thumnbail: string;
+  thumbnail: string;
 }
 
 const formatData = (response: any[]): ProductI[] => {
   return response?.map(item => {
-    return {title: item.title, price: item.price, thumnbail: item.thumnbail};
+    return {title: item.title, price: item.price, thumbnail: item.thumbnail};
   });
 };
 
