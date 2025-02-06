@@ -1,5 +1,5 @@
-import {View, Text, FlatList} from 'react-native';
 import React from 'react';
+import {FlatList} from 'react-native';
 import {ProductCard} from '../Product';
 
 const DATA = [
@@ -23,14 +23,14 @@ const DATA = [
   },
 ];
 
-const index = () => {
+export const ProductsList = ({data}: any) => {
   return (
     <FlatList
-      data={DATA}
+      horizontal={false}
+      data={data}
       renderItem={({item}) => <ProductCard {...item} />}
       keyExtractor={item => item.id}
+      showsVerticalScrollIndicator
     />
   );
 };
-
-export default index;
