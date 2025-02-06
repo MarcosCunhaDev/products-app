@@ -1,5 +1,5 @@
 import {useQuery} from '@tanstack/react-query';
-import {fetchProducts, ProductsResponse} from '../../services/api';
+import {fetchProducts, ProductsResponseI} from '../../services/api';
 
 export interface ProductI {
   title: string;
@@ -7,14 +7,8 @@ export interface ProductI {
   thumbnail: string;
 }
 
-// const formatData = (response: any[]): ProductI[] => {
-//   return response?.map(item => {
-//     return {title: item.title, price: item.price, thumbnail: item.thumbnail};
-//   });
-// };
-
 export const useGetProducts = () => {
-  const query = useQuery<ProductsResponse, Error>({
+  const query = useQuery<ProductsResponseI, Error>({
     queryKey: ['useGetProducts'],
     queryFn: fetchProducts,
   });

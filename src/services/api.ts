@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'https://dummyjson.com/products';
 
-export interface Product {
+export interface ProductI {
     id: number;
     title: string;
     price: number;
@@ -13,8 +13,8 @@ export interface Product {
     stock: number;
 }
 
-export interface ProductsResponse {
-    products: Product[];
+export interface ProductsResponseI {
+    products: ProductI[];
     total: number;
     skip: number;
     limit: number;
@@ -24,8 +24,8 @@ export interface CategoriesResponse {
     data: string[]
 }
 
-export const fetchProducts = async (): Promise<ProductsResponse> => {
-    const response = await axios.get<ProductsResponse>(API_URL);
+export const fetchProducts = async (): Promise<ProductsResponseI> => {
+    const response = await axios.get<ProductsResponseI>(API_URL);
     return response.data;
 };
 
