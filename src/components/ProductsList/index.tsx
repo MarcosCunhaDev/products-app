@@ -1,13 +1,25 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {ProductI} from '../../services/api';
 import {ProductCard} from '../Product';
+import {useGetProducts} from '../../hooks/react-query/useGetProducts';
+import {ProductsLoader} from './ProductsLoader';
+import {Loader} from '../Loader';
 
 export interface ProductsListI {
   data?: ProductI[];
+  isLoading: boolean;
 }
 
-export const ProductsList = ({data}: ProductsListI) => {
+export const ProductsList = ({data, isLoading}: ProductsListI) => {
+  // const {isFetching} = useGetProducts();
+
+  if (isLoading) {
+    return <ProductsLoader />;
+  }
+
+  console.log({isLoading});
+
   return (
     <View style={{flex: 1}}>
       <FlatList

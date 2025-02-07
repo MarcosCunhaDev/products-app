@@ -21,33 +21,27 @@ const filterByCategory = (
 };
 
 const Home = () => {
-  const {data, isFetching} = useGetProducts();
   const [selectedFilter, setSelectedFilter] = useState<string>('');
   const [filteredProducts, setFilteredProducts] = useState<
     ProductI[] | undefined
-  >(data?.products);
+  >();
+  const {data, isFetching} = useGetProducts();
 
   useEffect(() => {
-    console.log('console 1');
     if (selectedFilter) {
-      console.log('console 2');
       setFilteredProducts(filterByCategory(selectedFilter, data?.products));
     } else {
-      console.log('console 3');
       setFilteredProducts(data?.products);
     }
-  }, [selectedFilter]);
+  }, [selectedFilter, data?.products]);
 
-  if (isFetching) {
-    return <Loader />;
-  }
   return (
     <ScreenContainer keyboardAvoiding>
       <CategoriesFilter
         setSelectedFilter={setSelectedFilter}
         selectedFilter={selectedFilter}
       />
-      <ProductsList data={filteredProducts} />
+      <ProductsList data={filteredProducts} isLoading={isFetching} />
     </ScreenContainer>
   );
 };

@@ -16,6 +16,7 @@ export const ProductCard = ({...props}: ProductI) => {
     <TouchableOpacity onPress={handleGoToDetails}>
       <View
         style={{
+          backgroundColor: 'white',
           width: '100%',
           gap: 10,
           borderRadius: 10,

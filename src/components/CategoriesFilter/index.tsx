@@ -41,8 +41,7 @@ const CategoriesFilter = ({
     <ScrollView
       horizontal
       style={{
-        // borderWidth: 1,
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10,
         flexGrow: 0,
       }}
