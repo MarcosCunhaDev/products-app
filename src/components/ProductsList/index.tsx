@@ -9,13 +9,16 @@ export interface ProductsListI {
 
 export const ProductsList = ({data}: ProductsListI) => {
   return (
-    <FlatList
-      horizontal={false}
-      data={data}
-      renderItem={({item}) => <ProductCard {...item} />}
-      keyExtractor={item => String(item.id)}
-      ItemSeparatorComponent={() => <View style={{height: 20}} />}
-      showsVerticalScrollIndicator
-    />
+    <View style={{flex: 1}}>
+      <FlatList
+        contentContainerStyle={{flexGrow: 1, padding: 16}}
+        horizontal={false}
+        data={data}
+        renderItem={({item}) => <ProductCard {...item} />}
+        keyExtractor={item => String(item.id)}
+        ItemSeparatorComponent={() => <View style={{height: 20}} />}
+        showsVerticalScrollIndicator
+      />
+    </View>
   );
 };

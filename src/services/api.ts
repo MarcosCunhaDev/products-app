@@ -11,6 +11,7 @@ export interface ProductI {
     description: string;
     brand: string;
     stock: number;
+    category: string;
 }
 
 export interface ProductsResponseI {
