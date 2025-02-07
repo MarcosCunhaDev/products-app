@@ -16,14 +16,6 @@ const CategoriesFilter = ({
   const {data, isFetching, isError} = useCategories();
   const scrollViewRef = useRef(null);
 
-  // TODO: Finish this feature
-  // const onPressTouch = () => {
-  //   console.log('chamou onPressTouch');
-  //   if (scrollViewRef.current) {
-  //     scrollViewRef.current.scrollTo({x: 0, y: 0, animated: true});
-  //   }
-  // };
-
   if (isError) null;
 
   if (isFetching) {
@@ -34,10 +26,27 @@ const CategoriesFilter = ({
   };
   const handleUnselectFilter = () => {
     setSelectedFilter('');
-    // onPressTouch();
   };
 
-  return (
+  return selectedFilter ? (
+    <View
+      style={{
+        flexDirection: 'row',
+        gap: 15,
+        marginBottom: 10,
+        marginTop: 10,
+        flexGrow: 0,
+        width: '100%',
+        paddingLeft: 10,
+        paddingVertical: 10,
+      }}>
+      <CategoryItem
+        name={selectedFilter}
+        isSelected={true}
+        handlePressFilter={handleUnselectFilter}
+      />
+    </View>
+  ) : (
     <ScrollView
       horizontal
       style={{
@@ -56,27 +65,18 @@ const CategoriesFilter = ({
           flexDirection: 'row',
           gap: 15,
         }}>
-        {selectedFilter ? (
-          <>
-            <CategoryItem
-              name={selectedFilter}
-              isSelected={true}
-              handlePressFilter={handleUnselectFilter}
-            />
-          </>
-        ) : (
-          data?.map(item => (
-            <CategoryItem
-              key={item}
-              name={item}
-              isSelected={item.includes(selectedFilter)}
-              handlePressFilter={() => handleSelectFilter(item)}
-            />
-          ))
-        )}
+        {data?.map(item => (
+          <CategoryItem
+            key={item}
+            name={item}
+            isSelected={item.includes(selectedFilter)}
+            handlePressFilter={() => handleSelectFilter(item)}
+          />
+        ))}
       </View>
     </ScrollView>
   );
+
 };
 
 export default CategoriesFilter;

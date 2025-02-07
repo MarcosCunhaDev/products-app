@@ -5,6 +5,8 @@ import {ProductCard} from '../Product';
 import {useGetProducts} from '../../hooks/react-query/useGetProducts';
 import {ProductsLoader} from './ProductsLoader';
 import {Loader} from '../Loader';
+import {EmptyState} from './EmptyState';
+
 
 export interface ProductsListI {
   data?: ProductI[];
@@ -18,7 +20,6 @@ export const ProductsList = ({data, isLoading}: ProductsListI) => {
     return <ProductsLoader />;
   }
 
-  console.log({isLoading});
 
   return (
     <View style={{flex: 1}}>
@@ -26,6 +27,7 @@ export const ProductsList = ({data, isLoading}: ProductsListI) => {
         contentContainerStyle={{flexGrow: 1, padding: 16}}
         horizontal={false}
         data={data}
+        ListEmptyComponent={() => <EmptyState />}
         renderItem={({item}) => <ProductCard {...item} />}
         keyExtractor={item => String(item.id)}
         ItemSeparatorComponent={() => <View style={{height: 20}} />}
