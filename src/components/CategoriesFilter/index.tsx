@@ -1,45 +1,13 @@
 import {View, Text, ScrollView, TouchableWithoutFeedback} from 'react-native';
 import React, {useRef, useState} from 'react';
 import {useCategories} from '../../hooks/react-query/useGetCategories';
+import {CategoriesLoader} from './CategoriesLoader';
+import {CategoryItem} from './CategoryItem';
 
 export interface CategoriesFilterI {
   selectedFilter: string;
   setSelectedFilter: (category: string) => void;
 }
-
-export interface CategoryItemI {
-  handlePressFilter?: () => void;
-  isSelected: boolean;
-  name: string;
-}
-
-const CategoryItem = ({name, isSelected, handlePressFilter}: CategoryItemI) => {
-  return (
-    <TouchableWithoutFeedback onPress={handlePressFilter}>
-      <View
-        key={name}
-        style={{
-          borderRadius: 8,
-          backgroundColor: 'tomato',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 10,
-          borderColor: isSelected ? 'white' : undefined,
-          borderWidth: isSelected ? 1 : 0,
-        }}>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'white',
-            textTransform: 'capitalize',
-          }}>
-          {name}
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
 
 const CategoriesFilter = ({
   selectedFilter,
@@ -58,8 +26,9 @@ const CategoriesFilter = ({
 
   if (isError) null;
 
-  if (isFetching) null;
-
+  if (isFetching) {
+    return <CategoriesLoader />;
+  }
   const handleSelectFilter = (category: string) => {
     setSelectedFilter(category);
   };
