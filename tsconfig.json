@@ -8,6 +8,14 @@
     "strict": true,
        "types": [
       "@types/styled-components-react-native"
-    ]
+    ],
+     "paths": {
+      "@components/*": ["./src/components/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@theme/*": ["./src/theme/*"]
+    }
   }
+
 }

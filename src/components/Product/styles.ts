@@ -27,7 +27,7 @@ export const ContainerTxt = styled.View`
 export const ContainerMainTxt = styled.View`
     justify-content:center;
     width: 70%;
-    gap: 10;
+    gap: 10px;
     padding: 5px;
 `
 
