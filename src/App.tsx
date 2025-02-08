@@ -1,44 +1,19 @@
-import type {PropsWithChildren} from 'react';
-import React from 'react';
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {NavigationContainerWrapper} from './navigation/NavigationContainer';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import React from 'react';
+import {ThemeProvider} from 'styled-components/native';
+import {NavigationContainerWrapper} from './navigation/NavigationContainer';
+import {theme} from './theme/theme';
 
 const queryClient = new QueryClient();
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
-      <NavigationContainerWrapper />
+      <ThemeProvider theme={theme}>
+        <NavigationContainerWrapper />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

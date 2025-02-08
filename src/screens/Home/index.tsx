@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useGetProducts} from '../../hooks/react-query/useGetProducts';
 import {ProductsList} from '../../components/ProductsList';
 import {Loader} from '../../components/Loader';
-import CategoriesFilter from '../../components/CategoriesFilter';
+import CategoriesFilter from '../../components/CategoriesFilter/CategoriesFilter';
 import {ProductI} from '../../services/api';
 import ScreenContainer from '../../components/ScreenContainer';
 import {

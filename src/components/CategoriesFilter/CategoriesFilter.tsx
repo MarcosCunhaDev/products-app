@@ -42,7 +42,6 @@ const CategoriesFilter = ({
       }}>
       <CategoryItem
         name={selectedFilter}
-        isSelected={true}
         handlePressFilter={handleUnselectFilter}
       />
     </View>
@@ -69,14 +68,12 @@ const CategoriesFilter = ({
           <CategoryItem
             key={item}
             name={item}
-            isSelected={item.includes(selectedFilter)}
             handlePressFilter={() => handleSelectFilter(item)}
           />
         ))}
       </View>
     </ScrollView>
   );
-
 };
 
 export default CategoriesFilter;
