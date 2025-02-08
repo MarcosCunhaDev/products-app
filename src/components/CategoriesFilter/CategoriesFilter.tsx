@@ -1,5 +1,5 @@
-import {View, Text, ScrollView, TouchableWithoutFeedback} from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
+import {ScrollView, View} from 'react-native';
 import {useCategories} from '../../hooks/react-query/useGetCategories';
 import {CategoriesLoader} from './CategoriesLoader';
 import {CategoryItem} from './CategoryItem';
