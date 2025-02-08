@@ -1,5 +1,5 @@
 import {useQuery} from '@tanstack/react-query';
-import {fetchProducts, ProductsResponseI} from '../../services/api';
+import {fetchProducts, ProductsResponseI} from '@services/api';
 
 export interface ProductI {
   title: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {FlatList, Text, View} from 'react-native';
-import {ProductI} from '../../services/api';
+import {ProductI} from '@services/api';
 import {ProductCard} from '../Product';
-import {useGetProducts} from '../../hooks/react-query/useGetProducts';
+import {useGetProducts} from '@hooks/react-query/useGetProducts';
 import {ProductsLoader} from './ProductsLoader';
 import {Loader} from '../Loader';
 import {EmptyState} from './EmptyState';

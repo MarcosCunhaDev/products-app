@@ -1,17 +1,10 @@
-import {Text, View} from 'react-native';
+import CategoriesFilter from '@components/CategoriesFilter/CategoriesFilter';
+import {ProductsList} from '@components/ProductsList';
+import ScreenContainer from '@components/ScreenContainer';
+import {useGetProducts} from '@hooks/react-query/useGetProducts';
+import {ProductI} from '@services/api';
 import React, {useEffect, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {useGetProducts} from '../../hooks/react-query/useGetProducts';
-import {ProductsList} from '../../components/ProductsList';
-import {Loader} from '../../components/Loader';
-import CategoriesFilter from '../../components/CategoriesFilter/CategoriesFilter';
-import {ProductI} from '../../services/api';
-import ScreenContainer from '../../components/ScreenContainer';
-import {
-  ProductsSorter,
-  criteriaT,
-  orderT,
-} from '../../components/ProductsSorter';
+import {ProductsSorter, criteriaT, orderT} from '@components/ProductsSorter';
 
 const filterByCategory = (
   currentCategory: string,
@@ -89,7 +82,7 @@ const Home = () => {
   };
 
   return (
-    <ScreenContainer keyboardAvoiding>
+    <ScreenContainer>
       <CategoriesFilter
         setSelectedFilter={setSelectedFilter}
         selectedFilter={selectedFilter}

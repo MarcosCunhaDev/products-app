@@ -14,7 +14,10 @@
       "@screens/*": ["./src/screens/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"],
-      "@theme/*": ["./src/theme/*"]
+      "@theme/*": ["./src/theme/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"],
+      "@native/*": ["./src/native/*"],
     }
   }
 

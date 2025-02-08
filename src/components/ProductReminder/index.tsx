@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, View} from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import {addReminderToCalendar} from '../../Native/Calendar';
+import {addReminderToCalendar} from '@native/calendar';
 
 export const ProductReminder = ({
   productName = 'Product',

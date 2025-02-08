@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {ScrollView, View} from 'react-native';
-import {useCategories} from '../../hooks/react-query/useGetCategories';
+import {useCategories} from '@hooks/react-query/useGetCategories';
 import {CategoriesLoader} from './CategoriesLoader';
 import {CategoryItem} from './CategoryItem';
 

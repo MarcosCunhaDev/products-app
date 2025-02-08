@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, TouchableOpacity} from 'react-native';
-import {ProductI} from '../../services/api';
+import {ProductI} from '@services/api';
 import {
   Container,
   ContainerDetails,

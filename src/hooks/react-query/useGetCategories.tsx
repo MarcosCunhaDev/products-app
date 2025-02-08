@@ -1,5 +1,5 @@
 import {useQuery} from '@tanstack/react-query';
-import {CategoriesResponse, fetchCategories} from '../../services/api';
+import {CategoriesResponse, fetchCategories} from '@services/api';
 
 export interface ProductI {
   title: string;
