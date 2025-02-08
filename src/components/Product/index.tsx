@@ -1,7 +1,9 @@
+import {RootStackParamList} from '@navigation/types';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ProductI} from '@services/api';
 import React from 'react';
 import {Image, Text, TouchableOpacity} from 'react-native';
-import {ProductI} from '@services/api';
 import {
   Container,
   ContainerDetails,
@@ -10,13 +12,17 @@ import {
   ContainerTxt,
 } from './styles';
 
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Home'
+>;
+
 export const ProductCard = ({...props}: ProductI) => {
   const {title, price, thumbnail} = {...props};
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   const handleGoToDetails = () => {
-    // TODO: FIX tsc
-    navigation.navigate('ProductDetails', {...props});
+    navigation.navigate('Details', {...props});
   };
 
   return (

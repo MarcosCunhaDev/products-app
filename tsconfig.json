@@ -18,6 +18,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@services/*": ["./src/services/*"],
       "@native/*": ["./src/native/*"],
+      "@navigation/*": ["./src/navigation/*"],
     }
   }
 

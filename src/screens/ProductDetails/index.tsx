@@ -1,13 +1,14 @@
-import {View, Text, Image} from 'react-native';
-import React from 'react';
-import {useRoute} from '@react-navigation/native';
-import {fetchProducts, ProductI} from '@services/api';
 import {ProductReminder} from '@components/ProductReminder';
+import {RootStackParamList} from '@navigation/types';
+import {RouteProp, useRoute} from '@react-navigation/native';
+import React from 'react';
+import {Image, Text, View} from 'react-native';
+
+type DetailsScreenRouteProp = RouteProp<RootStackParamList, 'Details'>;
 
 const ProductDetails = () => {
-  const route = useRoute();
-  const {title, price, description, brand, stock, thumbnail} =
-    route.params as ProductI;
+  const route = useRoute<DetailsScreenRouteProp>();
+  const {title, price, description, brand, stock, thumbnail} = route.params;
 
   return (
     <View style={{backgroundColor: 'white', flex: 1, padding: 10}}>
