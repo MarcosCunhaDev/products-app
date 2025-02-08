@@ -4,7 +4,11 @@ import ScreenContainer from '@components/ScreenContainer';
 import {useGetProducts} from '@hooks/react-query/useGetProducts';
 import {ProductI} from '@services/api';
 import React, {useEffect, useState} from 'react';
-import {ProductsSorter, criteriaT, orderT} from '@components/ProductsSorter';
+import {
+  ProductsSorter,
+  criteriaT,
+  orderT,
+} from '@components/ProductsSorter/ProductsSorter';
 
 const filterByCategory = (
   currentCategory: string,
