@@ -51,7 +51,8 @@ This is one way to run your app — you can also build it directly from Android 
 # Sample examples of features implemented 
 ## Fetching products (with Infinite scroll)
 ## Filter products by category 
-## Sort products by Price or Rating  
+## Sort products by Price 
+## Sort products by Rating 
 ## Pass data to details screen
 
 
