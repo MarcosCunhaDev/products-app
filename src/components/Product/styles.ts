@@ -4,13 +4,11 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     width: '100%';
-    /* gap: 10px; */
     border-radius: 10px;
     border-width: 1px;
     border-color: gray;
     flex-direction: row;
     display: flex;
-    /* justify-content: space-between; */
 `;
 
 export const ContainerImg = styled.View`
@@ -19,13 +17,11 @@ export const ContainerImg = styled.View`
     height: 120px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    /* border-width: 1px; */
 `
 
 export const ContainerTxt = styled.View`
     flex: 1;
     flex-direction: row;
-    /* border-width: 1px; */
     justify-content: space-between;
 `
 
@@ -35,7 +31,6 @@ export const ContainerMainTxt = styled.View`
     gap: 8px;
     padding: 5px;
     padding-top: 8px;
-    /* border-width: 1px; */
 
 `
 
