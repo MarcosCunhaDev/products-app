@@ -8,6 +8,9 @@ This project was created to solve the challenge ofered by Modak as one of the pa
 - React Navigation;
 
 
+I successfully implemented all the basic features, as well as some of the bonus features (such as deep linking and a native module) for the Android version of the app. For testing purposes, I recommend running the Android version. I’ve included a link to the most recently generated APK in case the reviewer is unable to run the app locally. Please feel free to reach out with any questions, feedback, or suggestions!
+
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
