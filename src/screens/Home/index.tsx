@@ -51,10 +51,8 @@ const Home = () => {
   // update filtered products
   useEffect(() => {
     if (selectedFilter) {
-      console.log('console 1');
       setFilteredProducts(filterByCategory(selectedFilter, data?.products));
     } else {
-      console.log('console 2');
       setFilteredProducts(data?.products ?? []);
     }
   }, [selectedFilter, data?.products]);
@@ -62,7 +60,6 @@ const Home = () => {
   // update sorted products
   useEffect(() => {
     if (selectedOrder?.criteria && selectedOrder?.order) {
-      console.log('console 3');
       const sorted = sortByCriteriaAndOrder(
         filteredProducts,
         selectedOrder?.criteria,
@@ -70,17 +67,14 @@ const Home = () => {
       );
       setSortedProducts(sorted);
     } else {
-      console.log('console 4');
       setSortedProducts([...filteredProducts]);
     }
   }, [filteredProducts, selectedOrder?.criteria, selectedOrder?.order]);
 
   const handleSort = (criteria: criteriaT | null, order: orderT | null) => {
     if (criteria && order) {
-      console.log('console 5');
       setSelectedOrder({criteria, order});
     } else {
-      console.log('console 6');
       setSelectedOrder(null);
     }
   };
