@@ -96,7 +96,12 @@ OBS: This video was recorded using these commands (in sequence) to trigger the d
 - adb shell am start -W -a android.intent.action.VIEW -d "productsapp://home/beauty" com.productsapp 
 
 
+## Obs
+## To test the deeplink:
+Use this format of link adb shell am start -W -a android.intent.action.VIEW -d "productsapp://home/category" com.productsapp, "where category" is the name of the category that you will use to filter the data when openning the home.
 
+## To test the feature with the Native Module:
+After click in "schedule reminder" and confirm a time, look at the default calendar app of your device/emulator.
 
 
 
