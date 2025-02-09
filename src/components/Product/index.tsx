@@ -13,6 +13,7 @@ import {
 } from './styles';
 import {Tag} from '@components/Tag/Tag';
 import Icon from 'react-native-vector-icons/Feather';
+import {getRatingStars} from '@utils/helpers';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -37,6 +38,7 @@ export const ProductCard = ({...props}: ProductI) => {
         <ContainerTxt>
           <ContainerMainTxt>
             <Text numberOfLines={2}>{title}</Text>
+            <Text numberOfLines={1}>{getRatingStars(rating)}</Text>
             <Text numberOfLines={1} style={{fontWeight: 700}}>
               $ {price}
             </Text>

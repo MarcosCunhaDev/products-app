@@ -26,3 +26,16 @@ export const sortByCriteriaAndOrder = (
     }
   });
 };
+
+export const getRatingStars = (rating: number) => {
+  const clampedRating = Math.min(Math.max(rating, 0), 5);
+
+  const fullStars = Math.floor(clampedRating);
+  const halfStar = clampedRating - fullStars >= 0.5 ? 1 : 0;
+  const emptyStars = 5 - fullStars - halfStar;
+
+  const stars =
+    '★'.repeat(fullStars) + (halfStar ? '½' : '') + '☆'.repeat(emptyStars);
+
+  return stars;
+};
