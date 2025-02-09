@@ -49,11 +49,23 @@ If everything is set up correctly, you should see your new app running in the An
 This is one way to run your app — you can also build it directly from Android Studio.
 
 #  Examples of implemented features  
-## Fetching products (with Infinite scroll)
-## Filter products by category 
-## Sort products by Price 
-## Sort products by Rating 
-## Pass data to details screen
+### Fetching products (with Infinite scroll)
+
+https://github.com/user-attachments/assets/cebd9a30-ac19-4681-a923-cf863abc781a
+
+### Filter products by category 
+
+https://github.com/user-attachments/assets/d8f4e009-ea51-41a3-b04e-1e2aa4df7670
+
+### Sort products by Price 
+
+https://github.com/user-attachments/assets/1541be57-7a54-4f7c-8a83-7c3a8196df5a
+
+### Sort products by Rating 
+
+https://github.com/user-attachments/assets/03dbf89b-0924-4286-942f-a3234c567b9c
+
+### Pass data to details screen
 
 
 
