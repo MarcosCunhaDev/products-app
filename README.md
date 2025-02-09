@@ -12,7 +12,7 @@ This project was developed as part of the challenge presented by Modak for their
 I successfully implemented all the basic features, as well as some of the bonus features (such as deep linking and a native module) for the Android version of the app. For testing purposes, I recommend running the Android version. I’ve included a link to the most recently generated APK in case the reviewer is unable to run the app locally. Please feel free to reach out with any questions, feedback, or suggestions!
 
 
-# Getting Started
+# How to run the project (ProductsApp)
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
@@ -47,6 +47,14 @@ yarn android
 If everything is set up correctly, you should see your new app running in the Android Emulator or your connected device.
 
 This is one way to run your app — you can also build it directly from Android Studio.
+
+# Sample examples of features implemented 
+## Fetching products (with Infinite scroll)
+## Filter products by category 
+## Sort products by Price or Rating  
+## Pass data to details screen
+
+
 
 
 
