@@ -4,13 +4,13 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     width: '100%';
-    gap: 10px;
+    /* gap: 10px; */
     border-radius: 10px;
     border-width: 1px;
     border-color: gray;
     flex-direction: row;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 `;
 
 export const ContainerImg = styled.View`
@@ -19,22 +19,33 @@ export const ContainerImg = styled.View`
     height: 120px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    /* border-width: 1px; */
 `
 
 export const ContainerTxt = styled.View`
     flex: 1;
     flex-direction: row;
+    /* border-width: 1px; */
+    justify-content: space-between;
 `
 
 export const ContainerMainTxt = styled.View`
     justify-content:center;
     width: 70%;
-    gap: 10px;
+    gap: 8px;
     padding: 5px;
+    padding-top: 8px;
+    /* border-width: 1px; */
+
 `
 
 export const ContainerDetails = styled.View`
+    align-items: flex-end;
     justify-content: center;
+    flex-direction: row;
+    padding-bottom: 10px;
+    /* border-width: 1px; */
+    width: 30%;
 `
 
 export const ButtonText = styled.Text<{ theme: Theme }>`
