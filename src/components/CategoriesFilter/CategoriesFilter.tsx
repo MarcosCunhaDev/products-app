@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {ScrollView, TouchableWithoutFeedback, View} from 'react-native';
+import {ScrollView, TouchableWithoutFeedback, View, Text} from 'react-native';
 import {useCategories} from '@hooks/react-query/useGetCategories';
 import {CategoriesLoader} from './CategoriesLoader';
 import {CategoryItem} from './CategoryItem';
@@ -19,7 +19,13 @@ const CategoriesFilter = ({
   const {data, isLoading, isError} = useCategories();
   const scrollViewRef = useRef(null);
 
-  if (isError) null;
+  if (isError) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Error: {error?.message}</Text>
+      </View>
+    );
+  }
 
   if (isLoading) {
     return <CategoriesLoader />;

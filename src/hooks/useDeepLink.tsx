@@ -11,7 +11,7 @@ type DeepLinkParams = {
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Home'
+  'home'
 >;
 
 const useDeepLink = () => {
@@ -22,14 +22,12 @@ const useDeepLink = () => {
       const {url} = event;
       const route = url.replace(/.*?:\/\//g, '');
       const [screen, ...params] = route.split('/');
-      console.log({screen, ...params});
 
       const parsedParams: Record<string, string> = {};
       if (screen === 'home' && params.length > 0) {
         parsedParams.category = params[0];
       }
 
-      console.log({parsedParams});
       setDeepLinkData({
         screen: screen as keyof RootStackParamList,
         params: parsedParams,
