@@ -9,7 +9,7 @@ This project was developed as part of the challenge presented by Modak for their
 - React Navigation
 
 
-I successfully implemented all the basic features, as well as some of the bonus features (such as deep linking and a native module) for the Android version of the app. For testing purposes, I recommend running the Android version. I’ve included a link to the most recently generated APK in case the reviewer is unable to run the app locally. Please feel free to reach out with any questions, feedback, or suggestions!
+I successfully implemented all the basic features, as well as some of the bonus features (such as deep linking and a native module) for the Android version of the app. For testing purposes, I recommend running the Android version. Please feel free to reach out with any questions, feedback, or suggestions!
 
 
 # How to run the project (ProductsApp)
