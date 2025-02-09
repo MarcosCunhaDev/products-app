@@ -21,7 +21,7 @@ export const ProductsSorter = ({
     {label: 'Price (Low to High)', value: 'price-asc'},
     {label: 'Price (High to Low)', value: 'price-desc'},
     {label: 'Rating (Low to High)', value: 'rating-asc'},
-    {label: 'Rating (Low to Low)', value: 'rating-desc'},
+    {label: 'Rating (High to Low)', value: 'rating-desc'},
   ]);
 
   const [open, setOpen] = useState(false);
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   dropdownContainer: {
     backgroundColor: 'tomato',
-    borderWidth: 0,
+    // borderWidth: 0,
     borderRadius: 8,
     marginTop: 5,
   },
