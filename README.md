@@ -16,9 +16,20 @@ I successfully implemented all the basic features, as well as some of the bonus 
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Set node version
+## Step 1: Set node version and install dependencies
 
-First, you will need to run nvm to specify the right node version to run the project (wich is 20).
+First, you will need to run nvm (node version manager) to specify the right node version to run the project (wich is 20).
+```sh
+# using Yarn
+nvm use
+``` 
+After that you'll need to run:
+```sh
+# using Yarn
+yarn install
+``` 
+
+
 
 ## Step 2: Start Metro
 
