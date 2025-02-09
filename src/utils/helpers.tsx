@@ -39,3 +39,14 @@ export const getRatingStars = (rating: number) => {
 
   return stars;
 };
+
+export const formatToDollars = (value: number) => {
+  if (typeof value !== 'number' || isNaN(value)) {
+    throw new Error('Input must be a valid number');
+  }
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+  }).format(value);
+};
