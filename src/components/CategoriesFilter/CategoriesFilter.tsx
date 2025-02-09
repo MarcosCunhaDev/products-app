@@ -1,8 +1,9 @@
 import React, {useRef} from 'react';
-import {ScrollView, View} from 'react-native';
+import {ScrollView, TouchableWithoutFeedback, View} from 'react-native';
 import {useCategories} from '@hooks/react-query/useGetCategories';
 import {CategoriesLoader} from './CategoriesLoader';
 import {CategoryItem} from './CategoryItem';
+import Icon from 'react-native-vector-icons/Feather';
 
 export interface CategoriesFilterI {
   selectedFilter: string;
@@ -13,12 +14,12 @@ const CategoriesFilter = ({
   selectedFilter,
   setSelectedFilter,
 }: CategoriesFilterI) => {
-  const {data, isFetching, isError} = useCategories();
+  const {data, isLoading, isError} = useCategories();
   const scrollViewRef = useRef(null);
 
   if (isError) null;
 
-  if (isFetching) {
+  if (isLoading) {
     return <CategoriesLoader />;
   }
   const handleSelectFilter = (category: string) => {
@@ -37,9 +38,13 @@ const CategoriesFilter = ({
         marginTop: 10,
         flexGrow: 0,
         width: '100%',
-        paddingLeft: 10,
+        paddingLeft: 20,
         paddingVertical: 10,
+        alignItems: 'center',
       }}>
+      <TouchableWithoutFeedback onPress={handleUnselectFilter}>
+        <Icon name="x-circle" size={30} color="black" />
+      </TouchableWithoutFeedback>
       <CategoryItem
         name={selectedFilter}
         handlePressFilter={handleUnselectFilter}
@@ -55,7 +60,7 @@ const CategoriesFilter = ({
       }}
       contentContainerStyle={{
         paddingVertical: 10,
-        paddingLeft: 10,
+        paddingLeft: 20,
         paddingRight: 20,
       }}
       ref={scrollViewRef}>

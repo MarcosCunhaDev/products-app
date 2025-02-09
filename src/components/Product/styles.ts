@@ -1,4 +1,6 @@
+import { Theme } from '@theme/theme';
 import styled from "styled-components/native";
+
 
 export const Container = styled.View`
     width: '100%';
@@ -35,7 +37,7 @@ export const ContainerDetails = styled.View`
     justify-content: center;
 `
 
-export const ButtonText = styled.Text`
+export const ButtonText = styled.Text<{ theme: Theme }>`
   color: ${({ theme }) => theme.colors.background};
   font-size: 16px;
   font-weight: bold;

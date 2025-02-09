@@ -42,7 +42,7 @@ const sortByCriteriaAndOrder = (
 };
 
 const Home = () => {
-  const {data, isFetching} = useGetProducts();
+  const {data, isFetching, isLoading} = useGetProducts();
   const [selectedFilter, setSelectedFilter] = useState<string>('');
   const [filteredProducts, setFilteredProducts] = useState<ProductI[] | []>([]);
   const [sortedProducts, setSortedProducts] = useState<ProductI[] | []>([]);
@@ -91,7 +91,7 @@ const Home = () => {
         setSelectedFilter={setSelectedFilter}
         selectedFilter={selectedFilter}
       />
-      <ProductsSorter onSort={handleSort} />
+      <ProductsSorter onSort={handleSort} isLoading={isLoading} />
       <ProductsList data={sortedProducts} isLoading={isFetching} />
     </ScreenContainer>
   );

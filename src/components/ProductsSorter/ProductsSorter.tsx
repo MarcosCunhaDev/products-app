@@ -1,14 +1,20 @@
 import {View, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
+import {LoaderContainer, Wrapper} from './ProductsSorter.styles';
+import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
+import LinearGradient from 'react-native-linear-gradient';
 
+const ShimmerPlaceHolder = createShimmerPlaceholder(LinearGradient);
 export type criteriaT = 'price' | 'rating';
 export type orderT = 'asc' | 'desc';
 
 export const ProductsSorter = ({
   onSort,
+  isLoading = false,
 }: {
   onSort: (criteria: criteriaT | null, order: orderT | null) => void;
+  isLoading: boolean;
 }) => {
   const [items, setItems] = useState([
     {label: 'None', value: ''},
@@ -30,43 +36,44 @@ export const ProductsSorter = ({
     }
   };
 
+  if (isLoading) {
+    return (
+      <Wrapper>
+        <LoaderContainer>
+          <ShimmerPlaceHolder
+            LinearGradient={LinearGradient}
+            style={{flex: 1, width: '100%'}}
+          />
+        </LoaderContainer>
+      </Wrapper>
+    );
+  }
+
   return (
-    <View style={{marginBottom: 10, paddingVertical: 10}}>
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingHorizontal: 10,
-        }}>
-        <DropDownPicker
-          open={open}
-          value={value}
-          items={items}
-          setOpen={setOpen}
-          onChangeValue={handleSort}
-          setValue={setValue}
-          setItems={setItems}
-          placeholder={'Sort By'}
-          style={styles.dropdown}
-          dropDownContainerStyle={styles.dropdownContainer}
-          textStyle={styles.dropdownText}
-          placeholderStyle={styles.placeholderText}
-        />
-      </View>
-    </View>
+    <Wrapper>
+      <DropDownPicker
+        open={open}
+        value={value}
+        items={items}
+        setOpen={setOpen}
+        onChangeValue={handleSort}
+        setValue={setValue}
+        setItems={setItems}
+        placeholder={'Sort By'}
+        style={styles.dropdown}
+        dropDownContainerStyle={styles.dropdownContainer}
+        textStyle={styles.dropdownText}
+        placeholderStyle={styles.placeholderText}
+      />
+    </Wrapper>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    zIndex: 1,
-  },
   dropdown: {
     backgroundColor: 'tomato',
-    borderWidth: 0,
     borderRadius: 8,
+    height: 40,
   },
   dropdownContainer: {
     backgroundColor: 'tomato',

@@ -18,7 +18,7 @@ export const CategoriesLoader = () => {
       }}
       contentContainerStyle={{
         paddingVertical: 10,
-        paddingLeft: 10,
+        paddingLeft: 20,
         paddingRight: 20,
       }}>
       <ContainerRow>

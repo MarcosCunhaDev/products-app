@@ -1,13 +1,13 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
    "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./styled.d.ts"],
+    "typeRoots": ["./node_modules/@types", "./src/types", "styled.d.ts"],
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
     "esModuleInterop": true,
     "strict": true,
        "types": [
-      "@types/styled-components-react-native"
+      "jest", "node", "styled-components-react-native"
     ],
      "paths": {
       "@components/*": ["./src/components/*"],
