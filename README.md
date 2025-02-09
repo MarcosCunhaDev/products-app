@@ -20,7 +20,7 @@ I successfully implemented all the basic features, as well as some of the bonus 
 
 First, you will need to run nvm (node version manager) to specify the right node version to run the project (wich is 20).
 ```sh
-# using Yarn
+# using nvm
 nvm use
 ``` 
 After that you'll need to run:
