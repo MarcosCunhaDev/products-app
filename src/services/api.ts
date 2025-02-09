@@ -25,8 +25,9 @@ export interface CategoriesResponse {
     data: string[]
 }
 
-export const fetchProducts = async (): Promise<ProductsResponseI> => {
-    const response = await axios.get<ProductsResponseI>(API_URL);
+export const fetchProducts = async ({ pageParam = 1 }): Promise<ProductsResponseI> => {
+    const limit = 10;
+    const response = await axios.get<ProductsResponseI>(`${API_URL}?limit=${limit}&skip=${(pageParam - 1) * 10}`);
     return response.data;
 };
 

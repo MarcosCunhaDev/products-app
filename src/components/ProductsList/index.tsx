@@ -1,25 +1,28 @@
-import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import React, {useCallback} from 'react';
+import {ActivityIndicator, FlatList, View} from 'react-native';
 import {ProductI} from '@services/api';
 import {ProductCard} from '../Product';
 import {useGetProducts} from '@hooks/react-query/useGetProducts';
 import {ProductsLoader} from './ProductsLoader';
-import {Loader} from '../Loader';
 import {EmptyState} from './EmptyState';
-
 
 export interface ProductsListI {
   data?: ProductI[];
-  isLoading: boolean;
 }
 
-export const ProductsList = ({data, isLoading}: ProductsListI) => {
-  // const {isFetching} = useGetProducts();
+export const ProductsList = ({data}: ProductsListI) => {
+  const {fetchNextPage, hasNextPage, isFetchingNextPage, isLoading} =
+    useGetProducts();
+
+  const loadMore = useCallback(() => {
+    if (hasNextPage && !isFetchingNextPage) {
+      fetchNextPage();
+    }
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
   if (isLoading) {
     return <ProductsLoader />;
   }
-
 
   return (
     <View style={{flex: 1}}>
@@ -32,6 +35,13 @@ export const ProductsList = ({data, isLoading}: ProductsListI) => {
         keyExtractor={item => String(item.id)}
         ItemSeparatorComponent={() => <View style={{height: 20}} />}
         showsVerticalScrollIndicator
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={
+          isFetchingNextPage ? (
+            <ActivityIndicator color={'tomato'} size="small" />
+          ) : null
+        }
       />
     </View>
   );

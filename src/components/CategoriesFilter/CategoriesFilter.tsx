@@ -7,12 +7,14 @@ import Icon from 'react-native-vector-icons/Feather';
 
 export interface CategoriesFilterI {
   selectedFilter: string;
-  setSelectedFilter: (category: string) => void;
+  onFilter: (category: string) => void;
+  onRemoveFilter: () => void;
 }
 
 const CategoriesFilter = ({
   selectedFilter,
-  setSelectedFilter,
+  onFilter,
+  onRemoveFilter,
 }: CategoriesFilterI) => {
   const {data, isLoading, isError} = useCategories();
   const scrollViewRef = useRef(null);
@@ -22,12 +24,6 @@ const CategoriesFilter = ({
   if (isLoading) {
     return <CategoriesLoader />;
   }
-  const handleSelectFilter = (category: string) => {
-    setSelectedFilter(category);
-  };
-  const handleUnselectFilter = () => {
-    setSelectedFilter('');
-  };
 
   return selectedFilter ? (
     <View
@@ -42,13 +38,10 @@ const CategoriesFilter = ({
         paddingVertical: 10,
         alignItems: 'center',
       }}>
-      <TouchableWithoutFeedback onPress={handleUnselectFilter}>
+      <TouchableWithoutFeedback onPress={onRemoveFilter}>
         <Icon name="x-circle" size={30} color="black" />
       </TouchableWithoutFeedback>
-      <CategoryItem
-        name={selectedFilter}
-        handlePressFilter={handleUnselectFilter}
-      />
+      <CategoryItem name={selectedFilter} handlePressFilter={onRemoveFilter} />
     </View>
   ) : (
     <ScrollView
@@ -73,7 +66,7 @@ const CategoriesFilter = ({
           <CategoryItem
             key={item}
             name={item}
-            handlePressFilter={() => handleSelectFilter(item)}
+            handlePressFilter={() => onFilter(item)}
           />
         ))}
       </View>
