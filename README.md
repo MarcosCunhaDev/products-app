@@ -49,6 +49,7 @@ If everything is set up correctly, you should see your new app running in the An
 This is one way to run your app — you can also build it directly from Android Studio.
 
 #  Examples of implemented features  
+## Basic Features
 ### Fetching products (with Infinite scroll)
 
 https://github.com/user-attachments/assets/090463c6-02a6-47b6-a7d0-7afb674d98c5
@@ -72,6 +73,26 @@ https://github.com/user-attachments/assets/be824751-e0b7-47de-9419-d9fed6aeef5f
 
 
 ### Pass data to details screen
+
+https://github.com/user-attachments/assets/40345284-87ea-4383-ba4a-a98c0a2df07f
+
+
+## Bonus Features
+
+### Schedule a purchase reminder  (Android only)
+
+https://github.com/user-attachments/assets/dc443649-b3dd-474f-9dbc-5e1353163828
+
+
+### Acess especific product filter using deeplink (Android only)
+
+
+
+OBS: This video was recorded using these commands (in sequence) to trigger the deeplink:
+- adb shell am start -W -a android.intent.action.VIEW -d "productsapp://home/forniture" com.productsapp 
+- adb shell am start -W -a android.intent.action.VIEW -d "productsapp://home/beauty" com.productsapp 
+
+
 
 
 
