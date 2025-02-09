@@ -7,8 +7,9 @@ import {
 } from '@components/ProductsSorter/ProductsSorter';
 import ScreenContainer from '@components/ScreenContainer';
 import {useGetProducts} from '@hooks/react-query/useGetProducts';
+import useDeepLink from '@hooks/useDeepLink';
 import {sortByCriteriaAndOrder} from '@utils/helpers';
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 
 interface OrderI {
   criteria: criteriaT;
@@ -16,6 +17,7 @@ interface OrderI {
 }
 
 const Home = () => {
+  const deepLinkData = useDeepLink();
   const {data, isLoading} = useGetProducts();
   const [selectedFilter, setSelectedFilter] = useState<string>('');
   const [selectedOrder, setSelectedOrder] = useState<OrderI | null>(null);
@@ -58,6 +60,12 @@ const Home = () => {
       return [...filtered];
     }
   }, [products, selectedFilter, selectedOrder?.criteria, selectedOrder?.order]);
+
+  useEffect(() => {
+    if (deepLinkData?.params?.category) {
+      handleSelectFilter(deepLinkData?.params?.category);
+    }
+  }, [deepLinkData?.params?.category]);
 
   return (
     <ScreenContainer>

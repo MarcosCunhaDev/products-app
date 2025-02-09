@@ -6,7 +6,7 @@ import {RouteProp, useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 
-type DetailsScreenRouteProp = RouteProp<RootStackParamList, 'Details'>;
+type DetailsScreenRouteProp = RouteProp<RootStackParamList, 'details'>;
 
 const ProductDetails = () => {
   const route = useRoute<DetailsScreenRouteProp>();

@@ -17,7 +17,7 @@ import {getRatingStars} from '@utils/helpers';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Home'
+  'home'
 >;
 
 export const ProductCard = ({...props}: ProductI) => {
@@ -25,7 +25,7 @@ export const ProductCard = ({...props}: ProductI) => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   const handleGoToDetails = () => {
-    navigation.navigate('Details', {...props});
+    navigation.navigate('details', {...props});
   };
 
   return (
