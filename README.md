@@ -1,11 +1,12 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-This project was created to solve the challenge ofered by Modak as one of the parts of theirs selection process. It was created using the following technologies:
-- React Native CLI;
-- React Query;
-- TypeScript;
-- StyledComponents;
-- React Navigation;
+This project was developed as part of the challenge presented by Modak for their selection process. It was built using the following technologies:
+
+- React Native CLI
+- React Query
+- TypeScript
+- Styled Components
+- React Navigation
 
 
 I successfully implemented all the basic features, as well as some of the bonus features (such as deep linking and a native module) for the Android version of the app. For testing purposes, I recommend running the Android version. I’ve included a link to the most recently generated APK in case the reviewer is unable to run the app locally. Please feel free to reach out with any questions, feedback, or suggestions!
