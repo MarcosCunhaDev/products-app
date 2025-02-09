@@ -51,19 +51,25 @@ This is one way to run your app — you can also build it directly from Android 
 #  Examples of implemented features  
 ### Fetching products (with Infinite scroll)
 
-https://github.com/user-attachments/assets/cebd9a30-ac19-4681-a923-cf863abc781a
+https://github.com/user-attachments/assets/090463c6-02a6-47b6-a7d0-7afb674d98c5
 
 ### Filter products by category 
 
-https://github.com/user-attachments/assets/d8f4e009-ea51-41a3-b04e-1e2aa4df7670
+
+https://github.com/user-attachments/assets/136cbee2-2d78-4145-bc4e-9ee54eb1d2ce
+
 
 ### Sort products by Price 
 
-https://github.com/user-attachments/assets/1541be57-7a54-4f7c-8a83-7c3a8196df5a
+
+https://github.com/user-attachments/assets/cbd53113-af63-4ed6-a21f-9d228ac1621c
+
 
 ### Sort products by Rating 
 
-https://github.com/user-attachments/assets/03dbf89b-0924-4286-942f-a3234c567b9c
+
+https://github.com/user-attachments/assets/be824751-e0b7-47de-9419-d9fed6aeef5f
+
 
 ### Pass data to details screen
 
