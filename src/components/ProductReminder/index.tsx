@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {Button, View} from 'react-native';
-import DatePicker from 'react-native-date-picker';
+import Button from '@components/Button/Button';
 import {addReminderToCalendar} from '@native/calendar';
-import {useTheme} from 'styled-components';
+import React, {useState} from 'react';
+import {View} from 'react-native';
+import DatePicker from 'react-native-date-picker';
 
 export const ProductReminder = ({
   productName = 'Product',
@@ -23,8 +23,7 @@ export const ProductReminder = ({
   };
 
   return (
-    <View style={{padding: 20}}>
-      {/* TODO: refactor this button with icons */}
+    <View style={{marginTop: 20}}>
       <Button title="Schedule Reminder" onPress={() => setModalVisible(true)} />
       <DatePicker
         modal
