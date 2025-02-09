@@ -49,10 +49,8 @@ With Metro running, open a new terminal window/pane from the root of your React 
 ### Android
 
 ```sh
-# Using npm
-npm run android
 
-# OR using Yarn
+#using Yarn
 yarn android
 ```
 If everything is set up correctly, you should see your new app running in the Android Emulator or your connected device.
