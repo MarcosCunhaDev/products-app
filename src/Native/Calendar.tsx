@@ -1,29 +1,5 @@
-import {Alert, NativeModules, PermissionsAndroid} from 'react-native';
+import {Alert, NativeModules} from 'react-native';
 const {CalendarModule} = NativeModules;
-
-export const requestCalendarPermission = async (): Promise<boolean> => {
-  try {
-    const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.WRITE_CALENDAR,
-      {
-        title: 'Calendar Permission',
-        message: 'This app needs access to your calendar to add reminders.',
-        buttonNeutral: 'Ask Me Later',
-        buttonNegative: 'Cancel',
-        buttonPositive: 'OK',
-      },
-    );
-
-    return granted === PermissionsAndroid.RESULTS.GRANTED;
-  } catch (error) {
-    if (error instanceof Error) {
-      Alert.alert('Error', error.message);
-    } else {
-      Alert.alert('Error', 'Failed to request calendar permissions.');
-    }
-    return false;
-  }
-};
 
 export const addReminderToCalendar = async (
   startDate: Date,
@@ -34,7 +10,7 @@ export const addReminderToCalendar = async (
   const description = `Reminder to purchase the ${productTitle}`;
 
   try {
-    const hasPermission = await requestCalendarPermission();
+    const hasPermission = await CalendarModule.requestCalendarPermission();
 
     if (!hasPermission) {
       Alert.alert(

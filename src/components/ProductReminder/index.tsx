@@ -1,5 +1,5 @@
 import Button from '@components/Button/Button';
-import {addReminderToCalendar} from '@native/calendar';
+import {addReminderToCalendar} from '../../native/calendar';
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import DatePicker from 'react-native-date-picker';

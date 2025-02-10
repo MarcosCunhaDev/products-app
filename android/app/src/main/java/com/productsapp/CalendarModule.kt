@@ -74,13 +74,21 @@ class CalendarModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
             return
         }
 
-        // Request calendar permissions
-        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.WRITE_CALENDAR), 100)
-            promise.resolve("Calendar permission requested")
+
+        // Check if both READ_CALENDAR and WRITE_CALENDAR permissions are granted
+        val hasReadPermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED
+        val hasWritePermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED
+
+        if (hasReadPermission && hasWritePermission) {
+        promise.resolve("Calendar permissions already granted")
         } else {
-            promise.resolve("Calendar permission already granted")
-        }
+        val permissionsToRequest = arrayOf(
+            Manifest.permission.READ_CALENDAR,
+            Manifest.permission.WRITE_CALENDAR
+        )
+        ActivityCompat.requestPermissions(activity, permissionsToRequest, 100)
+        promise.resolve("Calendar permissions requested")
+    }
     }
 
 

@@ -17,7 +17,6 @@
       "@theme/*": ["./src/theme/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@services/*": ["./src/services/*"],
-      "@native/*": ["./src/native/*"],
       "@navigation/*": ["./src/navigation/*"],
     }
   }
