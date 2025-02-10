@@ -57,6 +57,28 @@ If everything is set up correctly, you should see your new app running in the An
 
 This is one way to run your app — you can also build it directly from Android Studio.
 
+## Possible errors: Case insesitive
+
+If you are encountering errors while running the project (due to a case sensitivity issue with the calendar native module), follow these steps:
+1. Rename the folders to match the repository:
+```sh
+mv src/Native src/native
+mv src/native/Calendar src/native/calendar
+```
+2. Update the import statement in index.tsx:
+```sh
+import Calendar from '../../native/calendar';
+```
+3. Clear Metro cache:
+```sh
+yarn start
+```
+4. Rebuild the project:
+```sh
+yarn android
+```
+
+
 #  Examples of implemented features  
 ## Basic Features
 ### Fetching products (with Infinite scroll)
