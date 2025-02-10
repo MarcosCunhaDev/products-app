@@ -57,7 +57,7 @@ If everything is set up correctly, you should see your new app running in the An
 
 This is one way to run your app — you can also build it directly from Android Studio.
 
-## Possible errors: Case insesitive
+## Possible errors: Case insensitive
 
 If you are encountering errors while running the project (due to a case sensitivity issue with the calendar native module), follow these steps:
 1. Rename the folders to match the repository:
